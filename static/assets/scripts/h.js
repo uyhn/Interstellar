@@ -6,19 +6,6 @@ try {
   inFrame = true
 }
 
-if (!inFrame && !navigator.userAgent.includes("Firefox")) {
-  const popup = open("about:blank", "_blank")
-  if (!popup || popup.closed) {
-    alert("Please allow popups and redirects.")
-  } else {
-    const doc = popup.document
-    const iframe = doc.createElement("iframe")
-    const style = iframe.style
-    const link = doc.createElement("link")
-
-    const name = localStorage.getItem("name") || "My Drive - Google Drive"
-    const icon = localStorage.getItem("icon") || "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
-
     doc.title = name
     link.rel = "icon"
     link.href = icon
